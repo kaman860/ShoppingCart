@@ -2,7 +2,7 @@ package com.springboot.shopcart.User.Helpers;
 
 import com.springboot.shopcart.User.entities.userEntity;
 
-public class addNewUserHelper {
+public class NewUserHelper {
 	
 	public userEntity addUser(String username , String password, String email) {
 		userEntity newUser = new userEntity();
