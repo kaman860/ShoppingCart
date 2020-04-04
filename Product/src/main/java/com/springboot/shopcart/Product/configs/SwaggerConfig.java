@@ -1,4 +1,4 @@
-package com.springboot.shopcart.Product;
+package com.springboot.shopcart.Product.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

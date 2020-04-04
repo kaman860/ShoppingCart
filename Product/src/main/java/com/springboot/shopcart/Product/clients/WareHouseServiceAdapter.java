@@ -1,7 +1,8 @@
-package com.springboot.shopcart.Product.Clients;
+package com.springboot.shopcart.Product.clients;
 
 import java.util.Arrays;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -13,11 +14,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.springboot.shopcart.Product.models.ProductQuantityDTO;
 
+@Slf4j
 @Component
 public class WareHouseServiceAdapter {
 	@Value("${wareHouseService.port}")
 	private String portNumber;
-	
+
 	@Autowired
 	RestTemplate restTemplate;
 
@@ -29,7 +31,9 @@ public class WareHouseServiceAdapter {
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		productQuantity.setProductId(id);
 		productQuantity.setQuantity(quantity);
+
 		HttpEntity<ProductQuantityDTO> entity = new HttpEntity<ProductQuantityDTO>(productQuantity, headers);
+		log.info("Calling WareHouse Service to update Product Quantity");
 		return restTemplate.exchange(newURL, HttpMethod.PUT, entity, ProductQuantityDTO.class).getBody();
 	}
 }
