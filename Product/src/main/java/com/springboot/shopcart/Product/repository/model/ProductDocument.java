@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
-public class Product {
+public class ProductDocument {
 
 	@Id
 	private long productId;

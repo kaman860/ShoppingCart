@@ -3,7 +3,7 @@ package com.springboot.shopcart.Product.resources;
 import com.springboot.shopcart.Product.clients.WareHouseServiceAdapter;
 import com.springboot.shopcart.Product.models.ProductQuantityDTO;
 import com.springboot.shopcart.Product.repository.ProductRepository;
-import com.springboot.shopcart.Product.repository.model.Product;
+import com.springboot.shopcart.Product.repository.model.ProductDocument;
 import com.springboot.shopcart.Product.service.ProductService;
 import com.springboot.shopcart.Product.service.WareHouseService;
 import io.swagger.annotations.ApiOperation;
@@ -27,13 +27,13 @@ public class ProductResource {
 	
 	@ApiOperation(value = "Get list of all products", tags = "Product Service")
 	@GetMapping
-	public Iterable<Product> getProducts() {
+	public Iterable<ProductDocument> getProducts() {
 		return productService.getProducts();
 	}
 
 	@ApiOperation(value = "Get product detail by ID", tags = "Product Service")
 	@GetMapping("/{id}")
-	public Optional<Product> getProduct(@PathVariable("id") long id) {
+	public Optional<ProductDocument> getProduct(@PathVariable("id") long id) {
 		return productService.getProduct(id);
 	}
 
