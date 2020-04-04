@@ -1,22 +1,16 @@
 package com.springboot.shopcart.Product.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ProductQuantityDTO {
 	private long productId;
 	private long quantity;
-
-	public long getProductId() {
-		return productId;
-	}
-
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
-
-	public long getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(long quantity) {
-		this.quantity = quantity;
-	}
 }
