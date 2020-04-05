@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.shopcart.Product"))
+                .apis(RequestHandlerSelectors.basePackage("com.shopcart.product"))
                 .paths(regex("/products.*"))
                 .build();
     }

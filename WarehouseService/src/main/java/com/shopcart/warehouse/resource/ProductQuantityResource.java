@@ -1,7 +1,7 @@
 package com.shopcart.warehouse.resource;
 
 import com.shopcart.warehouse.repository.model.ProductQuantityDocument;
-import com.shopcart.warehouse.service.WareHouseService;
+import com.shopcart.warehouse.service.WarehouseService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class ProductQuantityResource {
 
 	@Autowired
-	WareHouseService wareHouseService;
+	WarehouseService wareHouseService;
 	
-	@ApiOperation(value = "Get product quantity" , tags = "Ware House Service")
+	@ApiOperation(value = "Get product quantity" , tags = "Ware House Service" , response = ProductQuantityDocument.class)
 	@GetMapping("/{id}")
-	public long getProductQuantity(@PathVariable("id") long id) {
+	public ProductQuantityDocument getProductQuantity(@PathVariable("id") long id) {
 		return wareHouseService.getProductQuantity(id);
 	}
 

@@ -20,7 +20,7 @@ public class UserResource {
 	
 	@ApiOperation(value = "Get User deatils" , response = UserDocument.class , tags = "User Service")
 	@GetMapping
-	public Optional<UserDocument> getUserDetails(@PathVariable("username") String username){
+	public UserDocument getUserDetails(@PathVariable("username") String username){
 		return userService.getUserDetails(username);
 	}
 	
