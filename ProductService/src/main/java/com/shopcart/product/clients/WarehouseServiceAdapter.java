@@ -16,7 +16,7 @@ import com.shopcart.product.models.ProductQuantityDTO;
 
 @Slf4j
 @Component
-public class WareHouseServiceAdapter {
+public class WarehouseServiceAdapter {
 	@Value("${wareHouseService.port}")
 	private String portNumber;
 
@@ -33,7 +33,7 @@ public class WareHouseServiceAdapter {
 		productQuantity.setQuantity(quantity);
 
 		HttpEntity<ProductQuantityDTO> entity = new HttpEntity<ProductQuantityDTO>(productQuantity, headers);
-		log.info("Calling WareHouse Service to update Product Quantity");
+		log.info("Calling Warehouse Service to update Product Quantity");
 		return restTemplate.exchange(newURL, HttpMethod.PUT, entity, ProductQuantityDTO.class).getBody();
 	}
 }
