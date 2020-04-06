@@ -17,7 +17,7 @@ public class ProductResource {
 	@Autowired
 	ProductService productService;
 	@Autowired
-	WarehouseService wareHouseService;
+	WarehouseService warehouseService;
 	
 	@ApiOperation(value = "Get list of all products", tags = "Product Service" , response = ProductDocument.class)
 	@GetMapping
@@ -34,6 +34,6 @@ public class ProductResource {
 	@ApiOperation(value = "Update product quantity ", response = ProductQuantityDTO.class, tags = "Ware House Service")
 	@PutMapping("/{id}")
 	public ProductQuantityDTO updateProduct(@PathVariable("id") long id, @RequestParam long quantity) {
-		return wareHouseService.updateProduct(id, quantity);
+		return warehouseService.updateProduct(id, quantity);
 	}
 }

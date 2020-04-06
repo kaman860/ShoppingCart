@@ -1,7 +1,6 @@
 package com.shopcart.product.clients;
 
-import java.util.Arrays;
-
+import com.shopcart.product.models.ProductQuantityDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,12 +11,12 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.shopcart.product.models.ProductQuantityDTO;
+import java.util.Arrays;
 
 @Slf4j
 @Component
 public class WarehouseServiceAdapter {
-	@Value("${wareHouseService.port}")
+	@Value("${warehouseService.port}")
 	private String portNumber;
 
 	@Autowired

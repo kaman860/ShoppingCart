@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.*;
 public class ProductQuantityResource {
 
 	@Autowired
-	WarehouseService wareHouseService;
+	WarehouseService warehouseService;
 	
 	@ApiOperation(value = "Get product quantity" , tags = "Ware House Service" , response = ProductQuantityDocument.class)
 	@GetMapping("/{id}")
 	public ProductQuantityDocument getProductQuantity(@PathVariable("id") long id) {
-		return wareHouseService.getProductQuantity(id);
+		return warehouseService.getProductQuantity(id);
 	}
 
 	@ApiOperation(value = "Update product quantity ", response = ProductQuantityDocument.class, tags = "Ware House Service")
 	@PutMapping("/{id}")
 	public ProductQuantityDocument updateQuantity(@RequestBody ProductQuantityDocument productQuantityDocument) {
-		return wareHouseService.updateQuantity(productQuantityDocument);
+		return warehouseService.updateQuantity(productQuantityDocument);
 	}
 }
