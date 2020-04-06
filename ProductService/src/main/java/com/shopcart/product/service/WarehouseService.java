@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class WarehouseService {
 
     @Autowired
-    WarehouseServiceAdapter wareHouseServiceAdapter;
+    WarehouseServiceAdapter warehouseServiceAdapter;
 
     public ProductQuantityDTO updateProduct(long id, long quantity) {
-        return wareHouseServiceAdapter.updateProductQuantity(id, quantity);
+        return warehouseServiceAdapter.updateProductQuantity(id, quantity);
     }
 }

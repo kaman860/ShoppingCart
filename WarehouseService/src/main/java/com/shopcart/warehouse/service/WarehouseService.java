@@ -1,13 +1,12 @@
 package com.shopcart.warehouse.service;
 
+import com.shopcart.warehouse.helpers.UpdateProductQuantityHelper;
 import com.shopcart.warehouse.repository.ProductQuantityRepository;
 import com.shopcart.warehouse.repository.model.ProductQuantityDocument;
-import com.shopcart.warehouse.helpers.UpdateProductQuantityHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 public class WarehouseService {
@@ -18,9 +17,8 @@ public class WarehouseService {
     UpdateProductQuantityHelper updateProductQuantityHelper;
 
     public ProductQuantityDocument getProductQuantity(long id) {
-        ProductQuantityDocument productQuantityReponse = repository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException(String.valueOf(id)));
-        return productQuantityReponse;
     }
 
     public ProductQuantityDocument updateQuantity(ProductQuantityDocument productQuantityDocument) {
