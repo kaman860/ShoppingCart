@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: cd ProductService && mvn -B package --file pom.xml && cd ../WarehouseService && mvn -B package --file pom.xml && cd ../UserService && mvn -B package --file pom.xml
+      run: cd UserService && mvn -B package --file pom.xml
